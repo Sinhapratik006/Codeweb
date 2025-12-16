@@ -312,8 +312,10 @@ const questions = [
     answer: "B",
   },
 ];
-
 let index = 0;
+let score = 0;
+const totalQuestions = questions.length; // Make sure this is set
+
 const questionEl = document.getElementById("question");
 const buttons = document.querySelectorAll(".options button");
 const resultEl = document.getElementById("result");
@@ -330,18 +332,23 @@ function loadQuestion() {
 
 function checkAnswer(answer) {
   if (answer === questions[index].answer) {
-    resultEl.textContent = "Correct!";
-    index++;
-    if (index < questions.length) {
-      setTimeout(loadQuestion, 1000);
-    } else {
-      questionEl.textContent = "Congratulations! You answered all correctly!";
-      document.querySelector(".options").style.display = "none";
-    }
+    score++; // Increase score if correct
+    resultEl.textContent = "Correct! Score: " + score;
+    resultEl.style.color = "green";
   } else {
-    resultEl.textContent = "Wrong! Restarting...";
-    index = 0;
+    resultEl.textContent = "Wrong!";
+    resultEl.style.color = "red";
+  }
+
+  index++;
+  if (index < totalQuestions) {
     setTimeout(loadQuestion, 1000);
+  } else {
+    // Show final score
+    questionEl.textContent = "Quiz finished!";
+    resultEl.textContent = "Your score: " + score + "/" + totalQuestions;
+    resultEl.style.color = "blue";
+    document.querySelector(".options").style.display = "none";
   }
 }
 

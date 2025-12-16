@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Options</title>
+  </head>
+  <body style="text-align: center">
+    <h1>Do You Want Dificulty</h1>
+    <button
+      id="Yes"
+      style="
+        width: 20%;
+        padding: 1%;
+        background-color: rgb(119, 119, 235);
+        border-radius: 10px;
+        cursor: pointer;
+      "
+    >
+      Yes
+    </button>
+    <h3>Or</h3>
+    <button
+      id="No"
+      style="
+        width: 20%;
+        padding: 1%;
+        background-color: red;
+        border-radius: 10px;
+        cursor: pointer;
+      "
+    >
+      No
+    </button>
+    <b>
+      <p>
+        [Yes] If you Click to the first button you will be redirected to the
+        page where if you choose any wrong answer you have to start from the
+        begining . It is little frustating , so choose at your own risk
+      </p>
+      <p>
+        [No] If you Click to the second button you will be redirected to the
+        page where your right score will count and if you click to wrong then it
+        will not start from begining. your correct answer will be counted and
+        wrong answer will not be counted.
+      </p>
+    </b>
+    <h3 style="margin: 70px">
+      This Website is developed by Pratik Sinha. Cse Aiml-IV
+    </h3>
+    <h3>
+      Quote for this Website:<br /><br />
+      # When the Decision is made, Don't Look back
+    </h3>
+    <script>
+      document.getElementById("Yes").addEventListener("click", function () {
+        window.location.href = "ctest.html";
+      });
+      document.getElementById("No").addEventListener("click", function () {
+        window.location.href = "ctest1.html";
+      });
+    </script>
+  </body>
+</html>
